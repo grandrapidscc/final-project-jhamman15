@@ -6,8 +6,8 @@ int[,] dungeonArrayMap = new int[5, 5];
 
 //create a new wizert and enemies at the start
 Wizert wizert = new Wizert(100,200);
-Enemy goblinOne = new Enemy(5, 2, 3);
-Enemy goblinTwo = new Enemy(5, 4, 3);
+Enemy goblinOne = new Enemy(5, 2, 3, 1);
+Enemy goblinTwo = new Enemy(5, 4, 3, 2);
 
 
 List<(int, int)> enemyLocations = new List<(int, int)>();
@@ -43,19 +43,26 @@ while (run)
                 break;
             }
 
-            Console.WriteLine("Wizert:" + wizert.WizertLocation());
+            Console.WriteLine("Wizert Location:" + wizert.WizertLocation());
 
             //if wizert location and enemy location are the same, initiate a fight
             foreach(var location in enemyLocations)
             {
                 if (wizert.WizertLocation() == location)
                 {
-                    while (wizert.GetCurrentHealth() > 0 || goblinOne.GetGoblinHealth() > 0)
+
+                    /*
+                     * I would like to use the GetEnemyType() method from my enemy class and call it here
+                     * to find which enemy the wizert is fighting
+                     * 
+                     */
+
+                    while (wizert.GetCurrentHealth() > 0 || goblinOne.GetEnemyHealth() > 0)
                     {
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
                         Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints());
                         Console.WriteLine($"You have encountered a goblin.\r\n" +
-                            $"Its current HP is {goblinOne.GetGoblinHealth()}." +
+                            $"Its current HP is {goblinOne.GetEnemyHealth()}." +
                             "Press...\r\n" +
                             "1.To Attack\r\n" +
                             "2.To Heal\r\n" +
@@ -71,8 +78,8 @@ while (run)
                                 goblinOne.TakeDamage();
                                 Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
                                 Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints());
-                                Console.WriteLine(goblinOne.GetGoblinHealth());
-                                if (goblinOne.GetGoblinHealth() > 0)
+                                Console.WriteLine(goblinOne.GetEnemyHealth());
+                                if (goblinOne.GetEnemyHealth() > 0)
                                 {
                                     wizert.TakeDamage();
                                 }
@@ -82,8 +89,8 @@ while (run)
                                 wizert.Heal();
                                 Console.WriteLine(wizert.GetCurrentHealth());
                                 Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints());
-                                Console.WriteLine(goblinOne.GetGoblinHealth());
-                                if (goblinOne.GetGoblinHealth() > 0)
+                                Console.WriteLine("Enemy Health: " + goblinOne.GetEnemyHealth());
+                                if (goblinOne.GetEnemyHealth() > 0)
                                 {
                                     wizert.TakeDamage();
                                 }

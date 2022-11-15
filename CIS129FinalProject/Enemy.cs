@@ -12,12 +12,14 @@ namespace CIS129FinalProject
         private int _healthPoints;
         private int _locationX;
         private int _locationY;
+        private int _enemyId;
 
-        public Enemy(int healthPoints, int locationX, int locationY)
+        public Enemy(int healthPoints, int locationX, int locationY, int enemyId)
         {
             _healthPoints = healthPoints;
             _locationX = locationX;
             _locationY = locationY;
+            _enemyId = enemyId;
         }
 
         public void TakeDamage() 
@@ -30,9 +32,22 @@ namespace CIS129FinalProject
             return (_locationX, _locationY);
         }
 
-        public int GetGoblinHealth()
+        public int GetEnemyHealth()
         {
             return _healthPoints;
+        }
+
+        public Enemy GetEnemyType(int id)
+        {
+            if(id == _enemyId)
+            {
+                return ;
+            }
+            else
+            {
+                return 0;
+            }
+            
         }
 
     }

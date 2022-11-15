@@ -35,21 +35,25 @@ namespace CIS129FinalProject
             
         }
 
+        //method to return magicka points
         public int GetMagickaPoints()
         {
             return _magickaPoints;
         }
 
+        //method to take damage depending on attack
         public void TakeDamage()//add type of attack going in here 
         {
             _healthPoints--;
         }
 
+        //method to get current health
         public int GetCurrentHealth()
         {
             return _healthPoints;
         }
 
+        //method to heal and take away magicka
         public void Heal()
         {
             if(_magickaPoints > 5)
@@ -119,6 +123,7 @@ namespace CIS129FinalProject
             }
         }
 
+        //method to return wizert location
         public (int, int) WizertLocation()
         {
             return (wizertLocationX, wizertLocationY);
@@ -129,6 +134,7 @@ namespace CIS129FinalProject
             return { wizertLocationX, wizertLocationY};
         }*/
 
+        //testing method to print out location
         public void PrintWizertLocation()
         {
             Console.WriteLine($"{wizertLocationX}, {wizertLocationY}"); 
