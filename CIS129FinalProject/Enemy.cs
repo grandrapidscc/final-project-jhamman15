@@ -9,46 +9,57 @@ namespace CIS129FinalProject
 {
     internal class Enemy
     {
-        private int _healthPoints;
-        private int _locationX;
-        private int _locationY;
-        private int _enemyId;
+        public string enemyName;
+        public int healthPoints;
+        public int locationX;
+        public int locationY;
+        public int enemyId;
 
-        public Enemy(int healthPoints, int locationX, int locationY, int enemyId)
+        public Enemy(string EnemyName,   
+                    int HealthPoints, 
+                    int LocationX, 
+                    int LocationY, 
+                    int EnemyId)
         {
-            _healthPoints = healthPoints;
-            _locationX = locationX;
-            _locationY = locationY;
-            _enemyId = enemyId;
+            enemyName = EnemyName;
+            healthPoints = HealthPoints;
+            locationX = LocationX;
+            locationY = LocationY;
+            enemyId = EnemyId;
         }
 
         public void TakeDamage() 
         {
-            _healthPoints = _healthPoints - 5;
+            healthPoints = healthPoints - 5;
         }
 
         public (int, int) EnemyLocation()
         {
-            return (_locationX, _locationY);
+            return (locationX, locationY);
         }
 
         public int GetEnemyHealth()
         {
-            return _healthPoints;
+            return healthPoints;
         }
 
-        public Enemy GetEnemyType(int id)
+        public int EnemyAttack()
         {
-            if(id == _enemyId)
+            if(enemyName == "Goblin")
             {
-                return ;
+                return 2;
             }
-            else
+            if (enemyName == "Orc")
             {
-                return 0;
+                return 3;
             }
-            
+            if (enemyName == "Banshee")
+            {
+                return 5;
+            }
+            return 0;
         }
+
 
     }
 }

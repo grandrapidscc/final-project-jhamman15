@@ -42,9 +42,9 @@ namespace CIS129FinalProject
         }
 
         //method to take damage depending on attack
-        public void TakeDamage()//add type of attack going in here 
+        public void TakeDamage(int attackValue)
         {
-            _healthPoints--;
+            _healthPoints = _healthPoints - attackValue;
         }
 
         //method to get current health
@@ -69,8 +69,8 @@ namespace CIS129FinalProject
         }
 
         //keep wizert location stored
-        int wizertLocationX;
-        int wizertLocationY;
+        public int wizertLocationX;
+        public int wizertLocationY;
 
         //move function for each direction
         public void MoveNorth()
@@ -101,9 +101,9 @@ namespace CIS129FinalProject
 
         public void MoveEast()
         {
-            if (wizertLocationX > 0 && wizertLocationX <= 5)
+            if (wizertLocationX >= 0 && wizertLocationX < 5)
             {
-                wizertLocationX -= 1;
+                wizertLocationX += 1;
             }
             else
             {
@@ -113,9 +113,9 @@ namespace CIS129FinalProject
 
         public void MoveWest()
         {
-            if (wizertLocationY >= 0 && wizertLocationY < 5)
+            if (wizertLocationX > 0 && wizertLocationX <= 5)
             {
-                wizertLocationX += 1;
+                wizertLocationX -= 1;
             }
             else
             {
