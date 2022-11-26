@@ -12,21 +12,21 @@ namespace CIS129FinalProject
     public class Wizert
     {
         //define wizert and create constructor
-        private int _healthPoints;
-        private int _magickaPoints;
+        public int healthPoints;
+        public int magickaPoints;
 
-        public Wizert(int healthPoints, int magickaPoints)
+        public Wizert(int HealthPoints, int MagickaPoints)
         {
-            _healthPoints = healthPoints;
-            _magickaPoints = magickaPoints;
+            healthPoints = HealthPoints;
+            magickaPoints = MagickaPoints;
         }
 
         //action methods
         public void UseFireBall()
         {
-            if( _magickaPoints > 0)
+            if( magickaPoints > 0)
             {
-                _magickaPoints = _magickaPoints - 3;
+                magickaPoints = magickaPoints - 3;
             }
             else
             {
@@ -38,28 +38,28 @@ namespace CIS129FinalProject
         //method to return magicka points
         public int GetMagickaPoints()
         {
-            return _magickaPoints;
+            return magickaPoints;
         }
 
         //method to take damage depending on attack
         public void TakeDamage(int attackValue)
         {
-            _healthPoints = _healthPoints - attackValue;
+            healthPoints = healthPoints - attackValue;
         }
 
         //method to get current health
         public int GetCurrentHealth()
         {
-            return _healthPoints;
+            return healthPoints;
         }
 
         //method to heal and take away magicka
         public void Heal()
         {
-            if(_magickaPoints > 5)
+            if(magickaPoints > 5)
             {
-                _healthPoints = _healthPoints + 3;
-                _magickaPoints = _magickaPoints - 5;
+                healthPoints = healthPoints + 3;
+                magickaPoints = magickaPoints - 5;
             }
             else
             {
@@ -129,16 +129,31 @@ namespace CIS129FinalProject
             return (wizertLocationX, wizertLocationY);
         }
 
-/*        public int[,] WizertLocation()
-        {
-            return { wizertLocationX, wizertLocationY};
-        }*/
-
         //testing method to print out location
         public void PrintWizertLocation()
         {
             Console.WriteLine($"{wizertLocationX}, {wizertLocationY}"); 
         }
 
+        public void ReceivePowerup(int points)
+        {
+            if(points == 10)
+            {
+                healthPoints = healthPoints + points;
+            }
+            else
+            {
+                magickaPoints = magickaPoints + points;
+            }
+            
+        }
+
+        public void PrintExitFoundMessage()
+        {
+            Console.WriteLine("\r\nThe door creaks open and the moonlight streaks through " +
+                "the crack in the door. You stumble forward and fall to you knees." +
+                " The cold air stings your lungs. Quickly getting up, " +
+                "you run into the trees and leave that wretched dungeon behind.");
+        }
     }
 }

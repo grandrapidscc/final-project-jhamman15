@@ -13,19 +13,16 @@ namespace CIS129FinalProject
         public int healthPoints;
         public int locationX;
         public int locationY;
-        public int enemyId;
 
         public Enemy(string EnemyName,   
                     int HealthPoints, 
                     int LocationX, 
-                    int LocationY, 
-                    int EnemyId)
+                    int LocationY)
         {
             enemyName = EnemyName;
             healthPoints = HealthPoints;
             locationX = LocationX;
             locationY = LocationY;
-            enemyId = EnemyId;
         }
 
         public void TakeDamage() 
@@ -58,6 +55,23 @@ namespace CIS129FinalProject
                 return 5;
             }
             return 0;
+        }
+
+        public string EnemyAttackType()
+        {
+            if (enemyName == "Goblin")
+            {
+                return "Body Slam";
+            }
+            if (enemyName == "Orc")
+            {
+                return "Cleave";
+            }
+            if (enemyName == "Banshee")
+            {
+                return "Screech";
+            }
+            return "Error";
         }
 
 
