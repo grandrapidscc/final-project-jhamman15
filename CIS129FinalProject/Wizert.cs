@@ -30,7 +30,7 @@ namespace CIS129FinalProject
             }
             else
             {
-                Console.WriteLine("Not enough Magicka Points");
+                Console.WriteLine("Not enough Magicka Points!");
             }
             
         }
