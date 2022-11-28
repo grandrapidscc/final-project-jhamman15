@@ -151,7 +151,7 @@ namespace CIS129FinalProject
         public void PrintExitFoundMessage()
         {
             Console.WriteLine("\r\nThe door creaks open and the moonlight streaks through " +
-                "the crack in the door. You stumble forward and fall to you knees." +
+                "the door. You stumble forward and fall to you knees." +
                 " The cold air stings your lungs. Quickly getting up, " +
                 "you run into the trees and leave that wretched dungeon behind.");
         }
