@@ -62,7 +62,7 @@ while (start)
     bool run = true;
 
     //Start of each game print out beginning Game
-    Console.WriteLine("\r\n\r\n***Game Starting!***\r\n");
+    Console.WriteLine("\r\n\r\n\r\n***Game Starting!***\r\n\r\n");
     Console.WriteLine("There is a metallic clang as you awake with a start. You quickly get to your feet, having no " +
         "memory of how you got to this place. The air is damp and stale. You must find the dungeon exit. " +
         "You can hear screams beyond the corridor...\r\n");
@@ -113,7 +113,7 @@ while (start)
                         wizert.ReceivePowerup(powerup.PointsRestored());                       
                         powerups.Remove(powerup);
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
-                        Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints());
+                        Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints() + "\r\n");
                     }
                     else
                     {
@@ -121,7 +121,7 @@ while (start)
                         wizert.ReceivePowerup(powerup.PointsRestored());
                         powerups.Remove(powerup);
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
-                        Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints());
+                        Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints() + "\r\n");
                     }
                 }
 
@@ -172,7 +172,7 @@ while (start)
                                     Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints());
 
                                     //enemy attack if enemy is alive
-                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.");
+                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.\r\n");
                                     wizert.TakeDamage(enemy.EnemyAttack());
 
                                     //check if wizert is killed
@@ -203,13 +203,13 @@ while (start)
                                     wizert.Heal();
                                     Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth() + "\r\n");
                                     //enemy attack if enemy is alive
-                                    Console.WriteLine($"{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.");
+                                    Console.WriteLine($"{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.\r\n");
                                     wizert.TakeDamage(enemy.EnemyAttack());
                                 }
                                 else
                                 {
                                     Console.WriteLine("Heal failed! Not enough Magicka!");
-                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.");
+                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.\r\n");
                                     wizert.TakeDamage(enemy.EnemyAttack());
                                 }
 
@@ -217,7 +217,7 @@ while (start)
                                 //check if wizert is killed
                                 if (wizert.GetCurrentHealth() <= 0)
                                 {
-                                    Console.WriteLine("The Wizert has been mortally wounded. Game Over.");
+                                    Console.WriteLine("\r\nThe Wizert has been mortally wounded! Game Over.");
                                     battle = false;
                                     run = false;
                                     replay = true;
@@ -241,8 +241,8 @@ while (start)
                                 }
                                 else
                                 {
-                                    Console.WriteLine("\r\nFlee unsuccessful\r\n");
-                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.");
+                                    Console.WriteLine("\r\nFlee unsuccessful!\r\n");
+                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.\r\n");
                                     wizert.TakeDamage(enemy.EnemyAttack());
                                     battle = true;
                                     break;
@@ -281,7 +281,7 @@ while (start)
                         wizert.ReceivePowerup(powerup.PointsRestored());
                         powerups.Remove(powerup);
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
-                        Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints());
+                        Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints() + "\r\n");
                     }
                     else
                     {
@@ -289,7 +289,7 @@ while (start)
                         wizert.ReceivePowerup(powerup.PointsRestored());
                         powerups.Remove(powerup);
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
-                        Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints());
+                        Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints() + "\r\n");
                     }
                 }
 
@@ -340,7 +340,7 @@ while (start)
                                     Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints());
 
                                     //enemy attack if enemy is alive
-                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.");
+                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.\r\n");
                                     wizert.TakeDamage(enemy.EnemyAttack());
 
                                     //check if wizert is killed
@@ -371,13 +371,13 @@ while (start)
                                     wizert.Heal();
                                     Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth() + "\r\n");
                                     //enemy attack if enemy is alive
-                                    Console.WriteLine($"{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.");
+                                    Console.WriteLine($"{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.\r\n");
                                     wizert.TakeDamage(enemy.EnemyAttack());
                                 }
                                 else
                                 {
                                     Console.WriteLine("Heal failed! Not enough Magicka!");
-                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.");
+                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.\r\n");
                                     wizert.TakeDamage(enemy.EnemyAttack());
                                 }
 
@@ -385,7 +385,7 @@ while (start)
                                 //check if wizert is killed
                                 if (wizert.GetCurrentHealth() <= 0)
                                 {
-                                    Console.WriteLine("The Wizert has been mortally wounded. Game Over.");
+                                    Console.WriteLine("\r\nThe Wizert has been mortally wounded! Game Over.");
                                     battle = false;
                                     run = false;
                                     replay = true;
@@ -410,7 +410,7 @@ while (start)
                                 else
                                 {
                                     Console.WriteLine("\r\nFlee unsuccessful\r\n");
-                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.");
+                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.\r\n");
                                     wizert.TakeDamage(enemy.EnemyAttack());
                                     battle = true;
                                     break;
@@ -446,7 +446,7 @@ while (start)
                         wizert.ReceivePowerup(powerup.PointsRestored());
                         powerups.Remove(powerup);
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
-                        Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints());
+                        Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints() + "\r\n");
                     }
                     else
                     {
@@ -454,7 +454,7 @@ while (start)
                         wizert.ReceivePowerup(powerup.PointsRestored());
                         powerups.Remove(powerup);
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
-                        Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints());
+                        Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints() + "\r\n");
                     }
                 }
 
@@ -505,13 +505,13 @@ while (start)
                                     Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints());
 
                                     //enemy attack if enemy is alive
-                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.");
+                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.\r\n");
                                     wizert.TakeDamage(enemy.EnemyAttack());
 
                                     //check if wizert is killed
                                     if (wizert.GetCurrentHealth() <= 0)
                                     {
-                                        Console.WriteLine("\r\nThe Wizert has been mortally wounded. Game Over.\r\n");
+                                        Console.WriteLine("\r\nThe Wizert has been mortally wounded! Game Over.");
                                         battle = false;
                                         run = false;
                                         replay = true;
@@ -536,13 +536,13 @@ while (start)
                                     wizert.Heal();
                                     Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth() + "\r\n");
                                     //enemy attack if enemy is alive
-                                    Console.WriteLine($"{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.");
+                                    Console.WriteLine($"{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.\r\n");
                                     wizert.TakeDamage(enemy.EnemyAttack());
                                 }
                                 else
                                 {
                                     Console.WriteLine("Heal failed! Not enough Magicka!");
-                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.");
+                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.\r\n");
                                     wizert.TakeDamage(enemy.EnemyAttack());
                                 }
 
@@ -550,7 +550,7 @@ while (start)
                                 //check if wizert is killed
                                 if (wizert.GetCurrentHealth() <= 0)
                                 {
-                                    Console.WriteLine("The Wizert has been mortally wounded. Game Over.");
+                                    Console.WriteLine("\r\nThe Wizert has been mortally wounded! Game Over.");
                                     battle = false;
                                     run = false;
                                     replay = true;
@@ -575,7 +575,7 @@ while (start)
                                 else
                                 {
                                     Console.WriteLine("\r\nFlee unsuccessful\r\n");
-                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.");
+                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.\r\n");
                                     wizert.TakeDamage(enemy.EnemyAttack());
                                     battle = true;
                                     break;
@@ -611,7 +611,7 @@ while (start)
                         wizert.ReceivePowerup(powerup.PointsRestored());
                         powerups.Remove(powerup);
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
-                        Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints());
+                        Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints() + "\r\n");
                     }
                     else
                     {
@@ -619,7 +619,7 @@ while (start)
                         wizert.ReceivePowerup(powerup.PointsRestored());
                         powerups.Remove(powerup);
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
-                        Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints());
+                        Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints() + "\r\n");
                     }
                 }
 
@@ -670,13 +670,13 @@ while (start)
                                     Console.WriteLine("Wizert Magicka: " + wizert.GetMagickaPoints());
 
                                     //enemy attack if enemy is alive
-                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.");
+                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.\r\n");
                                     wizert.TakeDamage(enemy.EnemyAttack());
 
                                     //check if wizert is killed
                                     if (wizert.GetCurrentHealth() <= 0)
                                     {
-                                        Console.WriteLine("\r\nThe Wizert has been mortally wounded. Game Over.\r\n");
+                                        Console.WriteLine("\r\nThe Wizert has been mortally wounded! Game Over.");
                                         battle = false;
                                         run = false;
                                         replay = true;
@@ -701,13 +701,13 @@ while (start)
                                     wizert.Heal();
                                     Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth() + "\r\n");
                                     //enemy attack if enemy is alive
-                                    Console.WriteLine($"{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.");
+                                    Console.WriteLine($"{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.\r\n");
                                     wizert.TakeDamage(enemy.EnemyAttack());
                                 }
                                 else
                                 {
                                     Console.WriteLine("Heal failed! Not enough Magicka!");
-                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.");
+                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.\r\n");
                                     wizert.TakeDamage(enemy.EnemyAttack());
                                 }
 
@@ -740,7 +740,7 @@ while (start)
                                 else
                                 {
                                     Console.WriteLine("\r\nFlee unsuccessful\r\n");
-                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.");
+                                    Console.WriteLine($"\r\n{enemy.enemyName} attacks with {enemy.EnemyAttackType()}, doing {enemy.EnemyAttack()} damage.\r\n");
                                     wizert.TakeDamage(enemy.EnemyAttack());
                                     battle = true;
                                     break;
@@ -773,6 +773,8 @@ while (start)
         {
             Console.WriteLine("\r\nWould you like to play again? (y/n)");
             string again = Console.ReadLine();
+
+            again = again.ToLower();
 
             if (again == "n")
             {

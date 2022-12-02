@@ -54,7 +54,10 @@ namespace CIS129FinalProject
             {
                 return 5;
             }
-            return 0;
+            else
+            {
+                return 0;
+            }  
         }
 
         public string EnemyAttackType()
@@ -71,7 +74,11 @@ namespace CIS129FinalProject
             {
                 return "Screech";
             }
-            return "Error";
+            else
+            {
+                return "Error";
+            }
+            
         }
 
 
