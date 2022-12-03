@@ -109,7 +109,7 @@ while (start)
                 {
                     if (powerup.powerupName == "Health Potion")
                     {
-                        Console.WriteLine($"\r\nYou have found a {powerup.powerupName}!\r\n");
+                        Console.WriteLine($"\r\nYou have found a {powerup.powerupName}! Restore {powerup.PointsRestored()} Health Points!\r\n");
                         wizert.ReceivePowerup(powerup.PointsRestored());                       
                         powerups.Remove(powerup);
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
@@ -117,7 +117,7 @@ while (start)
                     }
                     else
                     {
-                        Console.WriteLine($"\r\nYou have found a {powerup.powerupName}!\r\n");
+                        Console.WriteLine($"\r\nYou have found a {powerup.powerupName}! Restore {powerup.PointsRestored()} Magicka Points!\r\n");
                         wizert.ReceivePowerup(powerup.PointsRestored());
                         powerups.Remove(powerup);
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
@@ -152,7 +152,7 @@ while (start)
                                 if (wizert.GetMagickaPoints() >= 3)
                                 {
                                     //wizert attacks for 5, if enemy is still alive, enemy attacks at end of case
-                                    Console.WriteLine($"\r\nYou use 3 MP to attack with Fireball! It does 5 Damage to the {enemy.enemyName}.\r\n");
+                                    Console.WriteLine($"\r\nYou use {wizert.MPCost(choice)} MP to attack with Fireball! It does 5 Damage to the {enemy.enemyName}.\r\n");
                                     wizert.UseFireBall();
                                     //enemy taking damage - always 5
                                     enemy.TakeDamage();
@@ -198,7 +198,7 @@ while (start)
                             case "2":
                                 if (wizert.GetMagickaPoints() >= 5)
                                 {
-                                    Console.WriteLine("You successfully heal for 3 HP!");
+                                    Console.WriteLine($"Using {wizert.MPCost(choice)} MP, you successfully heal for 3 HP!");
                                     //wizert heals for 3
                                     wizert.Heal();
                                     Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth() + "\r\n");
@@ -277,7 +277,7 @@ while (start)
                 {
                     if (powerup.powerupName == "Health Potion")
                     {
-                        Console.WriteLine($"\r\nYou have found a {powerup.powerupName}!\r\n");
+                        Console.WriteLine($"\r\nYou have found a {powerup.powerupName}! Restore {powerup.PointsRestored()} Health Points!\r\n");
                         wizert.ReceivePowerup(powerup.PointsRestored());
                         powerups.Remove(powerup);
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
@@ -285,7 +285,7 @@ while (start)
                     }
                     else
                     {
-                        Console.WriteLine($"\r\nYou have found a {powerup.powerupName}!\r\n");
+                        Console.WriteLine($"\r\nYou have found a {powerup.powerupName}! Restore {powerup.PointsRestored()} Magicka Points!\r\n");
                         wizert.ReceivePowerup(powerup.PointsRestored());
                         powerups.Remove(powerup);
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
@@ -320,7 +320,7 @@ while (start)
                                 if (wizert.GetMagickaPoints() >= 3)
                                 {
                                     //wizert attacks for 5, if enemy is still alive, enemy attacks at end of case
-                                    Console.WriteLine($"\r\nYou use 3 MP to attack with Fireball! It does 5 Damage to the {enemy.enemyName}.\r\n");
+                                    Console.WriteLine($"\r\nYou use {wizert.MPCost(choice)} MP to attack with Fireball! It does 5 Damage to the {enemy.enemyName}.\r\n");
                                     wizert.UseFireBall();
                                     //enemy taking damage - always 5
                                     enemy.TakeDamage();
@@ -366,7 +366,7 @@ while (start)
                             case "2":
                                 if (wizert.GetMagickaPoints() >= 5)
                                 {
-                                    Console.WriteLine("You successfully heal for 3 HP!");
+                                    Console.WriteLine($"Using {wizert.MPCost(choice)} MP, you successfully heal for 3 HP!");
                                     //wizert heals for 3
                                     wizert.Heal();
                                     Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth() + "\r\n");
@@ -442,7 +442,7 @@ while (start)
                 {
                     if (powerup.powerupName == "Health Potion")
                     {
-                        Console.WriteLine($"\r\nYou have found a {powerup.powerupName}!\r\n");
+                        Console.WriteLine($"\r\nYou have found a {powerup.powerupName}! Restore {powerup.PointsRestored()} Health Points!\r\n");
                         wizert.ReceivePowerup(powerup.PointsRestored());
                         powerups.Remove(powerup);
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
@@ -450,7 +450,7 @@ while (start)
                     }
                     else
                     {
-                        Console.WriteLine($"\r\nYou have found a {powerup.powerupName}!\r\n");
+                        Console.WriteLine($"\r\nYou have found a {powerup.powerupName}! Restore {powerup.PointsRestored()} Magicka Points!\r\n");
                         wizert.ReceivePowerup(powerup.PointsRestored());
                         powerups.Remove(powerup);
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
@@ -485,7 +485,7 @@ while (start)
                                 if (wizert.GetMagickaPoints() >= 3)
                                 {
                                     //wizert attacks for 5, if enemy is still alive, enemy attacks at end of case
-                                    Console.WriteLine($"\r\nYou use 3 MP to attack with Fireball! It does 5 Damage to the {enemy.enemyName}.\r\n");
+                                    Console.WriteLine($"\r\nYou use {wizert.MPCost(choice)} MP to attack with Fireball! It does 5 Damage to the {enemy.enemyName}.\r\n");
                                     wizert.UseFireBall();
                                     //enemy taking damage - always 5
                                     enemy.TakeDamage();
@@ -531,7 +531,7 @@ while (start)
                             case "2":
                                 if (wizert.GetMagickaPoints() >= 5)
                                 {
-                                    Console.WriteLine("You successfully heal for 3 HP!");
+                                    Console.WriteLine($"Using {wizert.MPCost(choice)} MP, you successfully heal for 3 HP!");
                                     //wizert heals for 3
                                     wizert.Heal();
                                     Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth() + "\r\n");
@@ -607,7 +607,7 @@ while (start)
                 {
                     if (powerup.powerupName == "Health Potion")
                     {
-                        Console.WriteLine($"\r\nYou have found a {powerup.powerupName}!\r\n");
+                        Console.WriteLine($"\r\nYou have found a {powerup.powerupName}! Restore {powerup.PointsRestored()} Health Points!\r\n");
                         wizert.ReceivePowerup(powerup.PointsRestored());
                         powerups.Remove(powerup);
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
@@ -615,7 +615,7 @@ while (start)
                     }
                     else
                     {
-                        Console.WriteLine($"\r\nYou have found a {powerup.powerupName}!\r\n");
+                        Console.WriteLine($"\r\nYou have found a {powerup.powerupName}! Restore {powerup.PointsRestored()} Magicka Points!\r\n");
                         wizert.ReceivePowerup(powerup.PointsRestored());
                         powerups.Remove(powerup);
                         Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth());
@@ -650,7 +650,7 @@ while (start)
                                 if (wizert.GetMagickaPoints() >= 3)
                                 {
                                     //wizert attacks for 5, if enemy is still alive, enemy attacks at end of case
-                                    Console.WriteLine($"\r\nYou use 3 MP to attack with Fireball! It does 5 Damage to the {enemy.enemyName}.\r\n");
+                                    Console.WriteLine($"\r\nYou use {wizert.MPCost(choice)} MP to attack with Fireball! It does 5 Damage to the {enemy.enemyName}.\r\n");
                                     wizert.UseFireBall();
                                     //enemy taking damage - always 5
                                     enemy.TakeDamage();
@@ -696,7 +696,7 @@ while (start)
                             case "2":
                                 if (wizert.GetMagickaPoints() >= 5)
                                 {
-                                    Console.WriteLine("You successfully heal for 3 HP!");
+                                    Console.WriteLine($"Using {wizert.MPCost(choice)} MP, you successfully heal for 3 HP!");
                                     //wizert heals for 3
                                     wizert.Heal();
                                     Console.WriteLine("Wizert Health: " + wizert.GetCurrentHealth() + "\r\n");

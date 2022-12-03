@@ -68,6 +68,22 @@ namespace CIS129FinalProject
             
         }
 
+        public int MPCost(string action)
+        {
+            if(action == "2")
+            {
+                return 5;
+            }
+            if(action == "1")
+            {
+                return 3;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
         //keep wizert location stored
         public int wizertLocationX;
         public int wizertLocationY;
@@ -154,6 +170,7 @@ namespace CIS129FinalProject
                 "the door. You stumble forward and fall to you knees." +
                 " The cold air stings your lungs. Quickly getting up, " +
                 "you run into the trees and leave that wretched dungeon behind.");
+            Console.WriteLine("\r\nDungeon Completed!!\r\n");
         }
     }
 }
