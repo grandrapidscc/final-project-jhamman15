@@ -89,53 +89,61 @@ namespace CIS129FinalProject
         public int wizertLocationY;
 
         //move function for each direction
-        public void MoveNorth()
+        public bool MoveNorth()
         {
             if(wizertLocationY >= 0 && wizertLocationY < 5)
             {
                 wizertLocationY += 1;
+                return true;
             }
             else
             {
-                Console.WriteLine("There is no door that direction.");
+                Console.WriteLine("There is no door that direction.\r\n");
+                return false;
             }
 
         }
 
-        public void MoveSouth()
+        public bool MoveSouth()
         {
             if(wizertLocationY > 0 && wizertLocationY <= 5)
             {
                 wizertLocationY -= 1;
+                return true;
             }
             else
             {
-                Console.WriteLine("There is no door that direction.");
+                Console.WriteLine("There is no door that direction.\r\n");
+                return false;
             }
             
         }
 
-        public void MoveEast()
+        public bool MoveEast()
         {
             if (wizertLocationX >= 0 && wizertLocationX < 5)
             {
                 wizertLocationX += 1;
+                return true;
             }
             else
             {
-                Console.WriteLine("There is no door that direction.");
+                Console.WriteLine("There is no door that direction.\r\n");
+                return false;
             }
         }
 
-        public void MoveWest()
+        public bool MoveWest()
         {
             if (wizertLocationX > 0 && wizertLocationX <= 5)
             {
                 wizertLocationX -= 1;
+                return true;
             }
             else
             {
-                Console.WriteLine("There is no door that direction.");
+                Console.WriteLine("There is no door that direction.\r\n");
+                return false;
             }
         }
 
